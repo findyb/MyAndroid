@@ -1,23 +1,19 @@
 package com.my.android.test;
 
-import android.bluetooth.BluetoothAdapter;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
+import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.hardware.fingerprint.FingerprintManagerCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.my.android.activity.BluetoothTest;
-import com.my.android.activity.RecyclerViewActivity;
-import com.my.android.activity.TestActivity;
 import com.my.android.bean.TestBean;
 import com.my.android.service.ExampleUtil;
 import com.my.android.service.TagAliasOperatorHelper;
@@ -40,7 +36,7 @@ import static com.my.android.service.TagAliasOperatorHelper.ACTION_SET;
 import static com.my.android.service.TagAliasOperatorHelper.TagAliasBean;
 import static com.my.android.service.TagAliasOperatorHelper.sequence;
 
-
+//Test sumbit
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
     private static final int MSG_SET_ALIAS = 0x12;
@@ -92,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    @OnClick({R.id.button,R.id.button2,R.id.button3})
+    @OnClick({R.id.button, R.id.button2, R.id.button3})
     public void btnClick(View view) {
         switch (view.getId()) {
             case R.id.button:
@@ -105,7 +101,8 @@ public class MainActivity extends AppCompatActivity {
 //                textView.setText("合计："+sum(Integer.parseInt(editText.getText().toString())));
                 textView.setText(getChannel());
                 break;
-        }     switch (view.getId()) {
+        }
+        switch (view.getId()) {
             case R.id.button2:
                 startActivity(new Intent(MainActivity.this, BluetoothTest.class));
                 break;
@@ -142,11 +139,11 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private static int sum(int s){
-        if(s==1 || s==2)
+    private static int sum(int s) {
+        if (s == 1 || s == 2)
             return 1;
         else
-            return sum(s-1)+sum(s-2);
+            return sum(s - 1) + sum(s - 2);
     }
 
     private final TagAliasCallback mAliasCallback = new TagAliasCallback() {
@@ -182,6 +179,7 @@ public class MainActivity extends AppCompatActivity {
         }
         return "";
     }
+
     private void setAlias() {
 //        EditText aliasEdit = (EditText) findViewById(R.id.et_alias);
 //        String alias = aliasEdit.getText().toString().trim();
